@@ -1,0 +1,967 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2020-07-01-preview",
+        "title": "SecurityDetonationManagementClient",
+        "description": "APIs to create and manage SecurityDetonation Resource Provider"
+    },
+    "host": "sonarrp.nam.daas.microsoft.com",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SecurityDetonation/chambers/{resourceName}": {
+            "get": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Gets an existing resource with the specified name under the given subscription and resource group.",
+                "operationId": "SecurityDetonationChambers_Get",
+                "parameters": [
+                    {
+                        "name": "resourceName",
+                        "in": "path",
+                        "description": "The name of the resource.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    },
+                    {
+                         "name": "resourceGroupName",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The name of the resource group. The name is case insensitive.",
+						  "pattern": "^[-\\w\\._\\(\\)]+$",
+						  "minLength": 1,
+						  "maxLength": 90,
+						  "x-ms-parameter-location": "method"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChamber"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Creates a new resource or updates an existing resource with the specified name under the given subscription and resource group.",
+                "operationId": "SecurityDetonationChambers_CreateOrUpdate",
+                "parameters": [
+                    {
+                        "name": "resourceName",
+                        "in": "path",
+                        "description": "The name of the resource.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "securityDetonationChamber",
+                        "in": "body",
+                        "description": "Request body with input for creating SecurityDetonationChamber resource",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChamber"
+                        }
+                    },
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    },
+                    {
+                         "name": "resourceGroupName",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The name of the resource group. The name is case insensitive.",
+						  "pattern": "^[-\\w\\._\\(\\)]+$",
+						  "minLength": 1,
+						  "maxLength": 90,
+						  "x-ms-parameter-location": "method"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChamber"
+                        }
+                    },
+                    "202": {
+                        "description": "Accepted"
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Deletes an existing resource with the specified name under the given subscription and resource group.",
+                "operationId": "SecurityDetonationChambers_Delete",
+                "parameters": [
+                    {
+                        "name": "resourceName",
+                        "in": "path",
+                        "description": "The name of the resource.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    },
+                    {
+                         "name": "resourceGroupName",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The name of the resource group. The name is case insensitive.",
+						  "pattern": "^[-\\w\\._\\(\\)]+$",
+						  "minLength": 1,
+						  "maxLength": 90,
+						  "x-ms-parameter-location": "method"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "202": {
+                        "description": "Accepted"
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Updates tags of an existing resource with the specified name under the given subscription and resource group.",
+                "operationId": "SecurityDetonationChambers_Patch",
+                "parameters": [
+                    {
+                        "name": "resourceName",
+                        "in": "path",
+                        "description": "The name of the resource.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "securityDetonationChamber",
+                        "in": "body",
+                        "description": "Request body with input for updating SecurityDetonationChamber resource",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChamber"
+                        }
+                    },
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    },
+                    {
+                         "name": "resourceGroupName",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The name of the resource group. The name is case insensitive.",
+						  "pattern": "^[-\\w\\._\\(\\)]+$",
+						  "minLength": 1,
+						  "maxLength": 90,
+						  "x-ms-parameter-location": "method"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChamber"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SecurityDetonation/chambers": {
+            "get": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Gets list of existing resources under the given subscription and resource group.",
+                "operationId": "SecurityDetonationChambers_ListByResourceGroup",
+                "parameters": [
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    },
+                    {
+                         "name": "resourceGroupName",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The name of the resource group. The name is case insensitive.",
+						  "pattern": "^[-\\w\\._\\(\\)]+$",
+						  "minLength": 1,
+						  "maxLength": 90,
+						  "x-ms-parameter-location": "method"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChambersList"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/providers/Microsoft.SecurityDetonation/chambers": {
+            "get": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Gets list of existing resources under the given subscription.",
+                "operationId": "SecurityDetonationChambers_ListBySubscription",
+                "parameters": [
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChambersList"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SecurityDetonation/chambers/{resourceName}/listKeys": {
+            "post": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Lists keys of the existing resource with the specified name under the given subscription and resource group.",
+                "operationId": "SecurityDetonationChambers_ListKeys",
+                "parameters": [
+                    {
+                        "name": "resourceName",
+                        "in": "path",
+                        "description": "The name of the resource.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    },
+                    {
+                         "name": "resourceGroupName",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The name of the resource group. The name is case insensitive.",
+						  "pattern": "^[-\\w\\._\\(\\)]+$",
+						  "minLength": 1,
+						  "maxLength": 90,
+						  "x-ms-parameter-location": "method"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChamberSecretsList"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SecurityDetonation/chambers/{resourceName}/listPublishingTokens": {
+            "post": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Gets Publishing Token existing resource with the specified name under the given subscription and resource group.",
+                "operationId": "SecurityDetonationChambers_ListPublishingTokens",
+                "parameters": [
+                    {
+                        "name": "resourceName",
+                        "in": "path",
+                        "description": "The name of the resource.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    },
+                    {
+                         "name": "resourceGroupName",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The name of the resource group. The name is case insensitive.",
+						  "pattern": "^[-\\w\\._\\(\\)]+$",
+						  "minLength": 1,
+						  "maxLength": 90,
+						  "x-ms-parameter-location": "method"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDetonationChamberSecretsList"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/providers/Microsoft.SecurityDetonation/checkNameAvailability": {
+            "post": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Checks that the resource name is valid and is not already in use.",
+                "operationId": "SecurityDetonationChambers_CheckNameAvailability",
+                "parameters": [
+                    {
+                        "name": "checkNameAvailabilityRequest",
+                        "in": "body",
+                        "description": "Request body with input for checking name availability",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CheckNameAvailabilityRequest"
+                        }
+                    },
+                    {
+						  "name": "subscriptionId",
+						  "in": "path",
+						  "required": true,
+						  "type": "string",
+						  "description": "The ID of the target subscription.",
+						  "minLength": 1
+					},
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/CheckNameAvailabilityResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/providers/Microsoft.SecurityDetonation/operations": {
+            "get": {
+                "tags": [
+                    "SecurityDetonationChamber"
+                ],
+                "description": "Lists all of the available API operations for SecurityDetonationChamber resource resources.",
+                "operationId": "Operations_List",
+                "parameters": [                    
+                    {
+                          "name": "api-version",
+						  "in": "query",
+						  "required": true,
+						  "type": "string",
+						  "description": "The API version to use for this operation.",
+						  "minLength": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definitions/OperationsList"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation has failed.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "SecurityDetonationChamber": {
+            "description": "Schema for SecurityDetonationChamber",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "Azure defined id of SecurityDetonationChamber",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "description": "Name of SecurityDetonationChamber",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "type": {
+                    "description": "Azure defined type of SecurityDetonationChamber",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "location": {
+                    "description": "Azure location of SecurityDetonationChamber",
+                    "type": "string",
+                    "x-ms-mutability": [
+                        "read",
+                        "create"
+                    ]
+                },
+                "tags": {
+                    "description": "Azure tags of SecurityDetonationChamber",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "properties": {
+                    "$ref": "#/definitions/SecurityDetonationChamberProperties",
+                    "description": "Custom properties of SecurityDetonationChamber"
+                }
+            }
+        },
+        "SecurityDetonationChamberProperties": {
+            "description": "Schema for SecurityDetonationChamber resource properties",
+            "type": "object",
+            "properties": {
+                "locations": {
+                    "description": "Locations to where SecurityDetonationChamber resource should be geo-replicated",
+                    "uniqueItems": false,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SecurityDetonationChamberLocation"
+                    }
+                },
+                "isManaged": {
+                    "description": "Bool value for indicating SecurityDetonationChamber resource is managed or unmanaged",
+                    "type": "boolean",
+                    "x-ms-mutability": [
+                        "read",
+                        "create"
+                    ]
+                },
+                "units": {
+                    "format": "int32",
+                    "description": "SecurityDetonationChamber Units",
+                    "type": "integer"
+                },
+                "provisioningState": {
+                    "description": "Current privisioning state of SecurityDetonationChamber",
+                    "enum": [
+                        "Creating",
+                        "Succeeded",
+                        "Updating",
+                        "Failed",
+                        "Canceled",
+                        "Suspended",
+                        "Deleting"
+                    ],
+                    "type": "string",
+                    "readOnly": true,
+                    "x-ms-enum": {
+                        "name": "provisioningState",
+                        "modelAsString": true
+                    }
+                },
+                "endpoint": {
+                    "description": "Endpoint of SecurityDetonationChamber",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "SecurityDetonationChamberLocation": {
+            "description": "Schema for SecurityDetonationChamber resource locations",
+            "type": "object",
+            "properties": {
+                "locationName": {
+                    "description": "Azure region for SecurityDetonationChamber",
+                    "type": "string"
+                },
+                "provisioningState": {
+                    "description": "Current privisioning state for the location",
+                    "enum": [
+                        "Creating",
+                        "Succeeded",
+                        "Updating",
+                        "Failed",
+                        "Canceled",
+                        "Suspended",
+                        "Deleting"
+                    ],
+                    "type": "string",
+                    "readOnly": true,
+                    "x-ms-enum": {
+                        "name": "provisioningState",
+                        "modelAsString": true
+                    }
+                },
+                "endpoint": {
+                    "description": "Regional endpoint of SecurityDetonationChamber",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "description": "The error code.",
+                    "type": "string"
+                },
+                "message": {
+                    "description": "The error message.",
+                    "type": "string"
+                }
+            }
+        },
+        "SecurityDetonationChambersList": {
+            "description": "Schema for getting list of SecurityDetonationChambers",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "List of SecurityDetonationChambers",
+                    "uniqueItems": false,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SecurityDetonationChamber"
+                    }
+                },
+                "nextLink": {
+                    "description": "Link to the next page of results.",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "SecurityDetonationChamberSecretsList": {
+            "description": "Schema for list of secrets associated with SecurityDetonationChamber",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "List of SecurityDetonationChamber secrets",
+                    "uniqueItems": false,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SecurityDetonationChamberSecret"
+                    }
+                },
+                "nextLink": {
+                    "description": "Link to the next page of results.",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "SecurityDetonationChamberSecret": {
+            "description": "Schema for secret associated with SecurityDetonationChamber",
+            "type": "object",
+            "properties": {
+                "secretName": {
+                    "description": "Secret name requested for SecurityDetonationChamber",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "secretValue": {
+                    "description": "Secret value requested for SecurityDetonationChamber",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "CheckNameAvailabilityRequest": {
+            "description": "Schema for request for checking the availabilty of resource name",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of the resource for checking the availabilty",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of the azure resource",
+                    "type": "string"
+                }
+            }
+        },
+        "CheckNameAvailabilityResponse": {
+            "description": "Schema for response for checking the availabiltiy of resource name",
+            "type": "object",
+            "properties": {
+                "nameAvailable": {
+                    "description": "A boolean value that indicates whether the name is available for you to use. If true, the name is available. If false, the name has already been taken or is invalid and cannot be used.",
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "reason": {
+                    "description": "The reason that an resource name could not be used. The Reason element is only returned if NameAvailable is false.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "message": {
+                    "description": "An error message explaining the Reason value in more detail.",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "OperationsList": {
+            "description": "Schema for list of SecurityDetonationChamber API operations.",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "The list of SecurityDetonationChamber API operations.",
+                    "uniqueItems": false,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Operation"
+                    }
+                },
+                "nextLink": {
+                    "description": "Link to the next page of results.",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "Operation": {
+            "description": "Schema for the SecurityDetonationChamber resource API operations.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The name of the operation.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "display": {
+                    "$ref": "#/definitions/Display",
+                    "description": "The information related to the operation.",
+                    "readOnly": true
+                },
+                "origin": {
+                    "description": "The origin of the operation.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "properties": {
+                    "$ref": "#/definitions/Properties",
+                    "description": "The properties related to the operation.",
+                    "readOnly": true
+                },
+                "isDataAction": {
+                    "description": "The isDataAction property related to the operation.",
+                    "type": "boolean",
+                    "readOnly": true
+                }
+            }
+        },
+        "Display": {
+            "type": "object",
+            "properties": {
+                "provider": {
+                    "description": "The name of the resource provider.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "resource": {
+                    "description": "The type of the resource.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "operation": {
+                    "description": "The name of the operation.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "description": {
+                    "description": "The description of the operation.",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "Properties": {
+            "type": "object",
+            "properties": {
+                "serviceSpecification": {
+                    "$ref": "#/definitions/ServiceSpecification",
+                    "description": "The service specifications for metrics output from Microsoft.insights",
+                    "readOnly": true
+                }
+            }
+        },
+        "ServiceSpecification": {
+            "type": "object",
+            "properties": {
+                "metricSpecifications": {
+                    "description": "The metrics specifications for the service.",
+                    "uniqueItems": false,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MetricSpecification"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "MetricSpecification": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The name of metrics specifications",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "displayName": {
+                    "description": "The display name of metrics specifications.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "displayDescription": {
+                    "description": "The display description of metrics specifications",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "unit": {
+                    "description": "The unit of metrics specifications",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "aggregationType": {
+                    "description": "The aggregation type of metrics specifications",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "fillGapWithZero": {
+                    "description": "The boolean setting for wheterh zero instead of gaps should be returned metrics specifications",
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "category": {
+                    "description": "The category of metrics specifications",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "enableRegionalMdmAccount": {
+                    "description": "Toggles regional Mdm accounts. If true will automatically append region to account name suffix.",
+                    "type": "boolean",
+                    "readOnly": true
+                },
+                "sourceMdmAccount": {
+                    "description": "Name of the Mdm Account",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "sourceMdmNamespace": {
+                    "description": "Name of the MDM namespace",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "flow": "implicit",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            },
+            "type": "oauth2",
+            "description": "Azure Active Directory OAuth2 Flow"
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
+}
