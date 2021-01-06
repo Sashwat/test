@@ -5,7 +5,7 @@
       "title":"SecurityDetonationManagementClient",
       "description":"APIs to create and manage SecurityDetonation Resource Provider"
    },
-   "host":"sonarrp.nam.daas.microsoft.com",
+   "host":"sonarrp.nam.test.daas.microsoft.com:8080",
    "schemes":[
       "https"
    ],
